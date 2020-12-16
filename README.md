@@ -23,7 +23,7 @@ taken from the standard input; command-line arguments are usually not
 required. For example, in a \*ix shell, run the solution to Day 1, Part
 1 as below.
 
-    > ./solve-01a.py < input.txt
+    $ ./solve-01a.py < input.txt
 
 The answer is generally printed as `Answer: ######`.
 
