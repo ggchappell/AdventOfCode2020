@@ -4,11 +4,6 @@
 
 import sys          # .stdin
 import re           # .search
-#import itertools    # .count, .combinations, .permutations, .chain
-#import copy         # .deepcopy
-#import collections  # .defaultdict
-#import os           # .system
-#import time         # .sleep
 
 
 # ======================================================================
