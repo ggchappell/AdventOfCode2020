@@ -11,6 +11,7 @@
 
 
 import sys          # .stdin
+import re           # .search
 
 line = sys.stdin.readline()  # Read single line from std input
 for line in sys.stdin:       # Read each line from stdin, includes \n
@@ -50,5 +51,12 @@ ll4 = [1, 2, *ll3, 9]        # List unpacking
 
 # F-Strings
 a, b = 1, 2
-print(f"ll[a] + b = {ll[a]+b}")
+print(f"ll[a] + b = {ll[a]+b}, b = {b}")
+
+# Regexps
+st = "aa bbb"
+mo1 = re.search(r"^(a+) (b+)$", st)
+if mo1:                      # Truthy if it matched
+    print(mo1[1])            # "aa"
+    print(mo1[2])            # "bbb"
 
