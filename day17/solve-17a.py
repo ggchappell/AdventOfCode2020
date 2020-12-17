@@ -3,6 +3,7 @@
 # Glenn G. Chappell
 
 import sys          # .stdin
+import itertools    # .product
 
 
 # ======================================================================
@@ -10,14 +11,12 @@ import sys          # .stdin
 # ======================================================================
 
 
-def count_active_nbrs(active_set, key):
+def count_active_nbrs(active_set, k):
     count = 0
-    for nbr in ( (key[0]+dx,key[1]+dy,key[2]+dz)
-                     for dx in (-1,0,1)
-                     for dy in (-1,0,1)
-                     for dz in (-1,0,1) ):
-        if nbr == key:
+    for offset in itertools.product((-1,0,1), repeat=3):
+        if offset == (0,0,0):
             continue
+        nbr = (k[0]+offset[0],k[1]+offset[1],k[2]+offset[2])
         if nbr in active_set:
             count += 1
     return count
@@ -27,12 +26,10 @@ def iterate(active_set):
     # Make set of inactive neighbors of active cubes
     inactive_to_check = set()
     for k in active_set:
-        for nbr in ( (k[0]+dx,k[1]+dy,k[2]+dz)
-                         for dx in (-1,0,1)
-                         for dy in (-1,0,1)
-                         for dz in (-1,0,1) ):
-            if nbr == k:
+        for offset in itertools.product((-1,0,1), repeat=3):
+            if offset == (0,0,0):
                 continue
+            nbr = (k[0]+offset[0],k[1]+offset[1],k[2]+offset[2])
             if nbr in active_set:
                 continue
             inactive_to_check.add(nbr)
