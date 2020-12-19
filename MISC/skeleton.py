@@ -4,7 +4,8 @@
 
 import sys          # .stdin, .argv
 import re           # .search
-import itertools    # .count, .combinations, .permutations, .chain
+import itertools    # .count, .combinations, .permutations, .chain,
+                    #  .product
 import copy         # .deepcopy
 import collections  # .defaultdict
 import os           # .system
