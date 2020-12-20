@@ -25,6 +25,7 @@ for line in sys.stdin:       # Read each line from stdin, includes \n
     if line:                 # Non-empty strings are truthy
         x = ord(line[0])     # Unicode codepoint
         print(chr(x))        # code -> character (type = str)
+    line_rev = line[::-1]    # Reversed line; is a string
 
 # Sets (type set)
 ss = { 22, 33 }
