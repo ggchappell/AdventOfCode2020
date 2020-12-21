@@ -30,7 +30,8 @@ for line in sys.stdin:       # Read each line from stdin, includes \n
 # Sets (type set)
 ss = { 22, 33 }
 ss.add(44)                   # Insert in set
-ss.remove(44)                # Delete from set
+ss.remove(44)                # Delete from set; set must contain element
+ss -= {44}                   # Delete element the set might not contain
 ss.pop()                     # Remove & return an arbitrary element
 ss2 = { 33, 44 }
 ss3 = ss | ss2               # Union
