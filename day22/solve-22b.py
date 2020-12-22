@@ -25,10 +25,7 @@ def round(deck1, deck2):
         winner = game(deck1[:c1], deck2[:c2])
     else:
         assert c1 != c2, "Decks contain identical card"
-        if c1 > c2:
-            winner = 1
-        else:
-            winner = 2
+        winner = 1 if c1 > c2 else 2
     if winner == 1:
         deck1.append(c1)
         deck1.append(c2)
@@ -50,12 +47,11 @@ def game(deck1, deck2):
         saved.add(key)
         round(deck1, deck2)
     assert deck1 or deck2
-    if not deck1:
-        return 2
-    elif not deck2:
+    assert not deck1 or not deck2
+    if not deck2:
         return 1
     else:
-        assert False
+        return 2
     
 
 # score - Given deck, in top-to-bottom order, return score.
