@@ -13,8 +13,8 @@ import re           # .search
 
 # A deck is a list in top-to-bottom order.
 
-# round - Play one round of Combat. Given decks are modified.
-def round(deck1, deck2):
+# play_round - Play one round of Combat. Given decks are modified.
+def play_round(deck1, deck2):
     assert isinstance(deck1, list)
     assert isinstance(deck2, list)
     assert deck1 and deck2
@@ -75,7 +75,7 @@ for line in sys.stdin:
 
 # Play the game until a player wins
 while deck1 and deck2:
-    round(deck1, deck2)
+    play_round(deck1, deck2)
 
 # *** Print Answer ***
 

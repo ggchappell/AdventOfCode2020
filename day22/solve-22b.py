@@ -13,16 +13,17 @@ import re           # .search
 
 # A deck is a list in top-to-bottom order.
 
-# round - Play one round of Recursive Combat. Given decks are modified.
-# Infinite game prevention rule not enforced for this game.
-def round(deck1, deck2):
+# play_round - Play one round of Recursive Combat. Given decks are
+# modified. Infinite game prevention rule is not enforced for this game
+# in this function.
+def play_round(deck1, deck2):
     assert isinstance(deck1, list)
     assert isinstance(deck2, list)
     assert deck1 and deck2
-    c1 = deck1.pop(0)
-    c2 = deck2.pop(0)
+    c1 = deck1.pop(0)  # Player 1's card
+    c2 = deck2.pop(0)  # Player 2's card
     if c1 <= len(deck1) and c2 <= len(deck2):
-        winner = game(deck1[:c1], deck2[:c2])
+        winner = play_game(deck1[:c1], deck2[:c2])  # Recurse
     else:
         assert c1 != c2, "Decks contain identical card"
         winner = 1 if c1 > c2 else 2
@@ -34,18 +35,19 @@ def round(deck1, deck2):
         deck2.append(c1)
 
 
-# game - Play a game of Recursive Combat. Given decks are modified.
+# play_game - Play a game of Recursive Combat. Given decks are modified.
+# Infinite game prevention rule is enforced here.
 # Return value is number of winning player: 1 or 2.
-def game(deck1, deck2):
+def play_game(deck1, deck2):
     assert isinstance(deck1, list)
     assert isinstance(deck2, list)
     saved = set()  # Saved games: (tuple(deck1), tuple(deck2))
     while deck1 and deck2:
         key = (tuple(deck1), tuple(deck2))
         if key in saved:
-            return 1
+            return 1  # Player 1 wins previously seen game
         saved.add(key)
-        round(deck1, deck2)
+        play_round(deck1, deck2)
     assert deck1 or deck2
     assert not deck1 or not deck2
     if not deck2:
@@ -98,7 +100,7 @@ for line in sys.stdin:
 # *** Do Computation ***
 
 # Play the game until a player wins
-winner = game(deck1, deck2)
+winner = play_game(deck1, deck2)
 
 # *** Print Answer ***
 
