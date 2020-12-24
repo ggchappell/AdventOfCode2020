@@ -15,6 +15,11 @@ import sys          # .stdin
 # forms a circular linked list.
 
 
+# print_data - print cups in clockwise order, no delimiters, ending with
+# a blank line. Begin with cup at start_index. print_start_flag is a
+# bool indicating whether the cup at start_index should be printed; the
+# rest are always printed.
+# THIS FUNCTION IS NOT CALLED, but it is useful for debugging.
 def print_data(data, start_index, print_start_flag):
     assert isinstance(data, list)
     size = len(data)
