@@ -3,6 +3,7 @@
 # Glenn G. Chappell
 
 import sys          # .stdin
+import functools    # .reduce
 
 
 # ======================================================================
@@ -37,10 +38,8 @@ if the_sets != []:
 total = 0
 for set_list in group_lines:
     assert len(set_list) > 0
-    s = set_list[0]
-    for ss in set_list[1:]:
-        s &= ss
-    total += len(s)
+    intersection = functools.reduce(lambda a,b: a & b, set_list)
+    total += len(intersection)
 
 # *** Print Answer ***
 
