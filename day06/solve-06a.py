@@ -36,10 +36,7 @@ if record_str:
 
 total = 0
 for g in group_lines:
-    s = set()
-    for c in g:
-        s.add(c)
-    total += len(s)
+    total += len(set(g))  # Add no. of distinct chars in g
 
 # *** Print Answer ***
 
