@@ -136,7 +136,7 @@ curr_tile_num = -1
 curr_tile = []
 for line in sys.stdin:
     line = line.rstrip()
-    if line == "":
+    if not line:
         assert curr_tile_num != -1
         assert len(curr_tile) == tile_size
         assert curr_tile_num not in tiles

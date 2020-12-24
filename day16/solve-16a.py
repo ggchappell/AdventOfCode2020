@@ -73,7 +73,7 @@ your_ticket = [ int(n_str) for n_str in ticket_strs ]
 assert len(your_ticket) == rules_count
 line = sys.stdin.readline()
 line = line.rstrip()
-assert line == ""
+assert not line
 
 # Read nearby tickets
 line = sys.stdin.readline()
@@ -82,7 +82,7 @@ assert line == "nearby tickets:"
 nearby_tickets = []
 for line in sys.stdin:
     line = line.rstrip()
-    assert line != ""
+    assert line
     ticket_strs = line.split(",")
     the_ticket = [ int(n_str) for n_str in ticket_strs ]
     assert len(the_ticket) == rules_count
