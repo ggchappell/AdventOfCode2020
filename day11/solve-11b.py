@@ -32,14 +32,14 @@ def iterate(grid):
                 return 1
 
     def count_occupied_nbrs(r, c):
-        return (sees_occupied01(r, c, -1, -1) +
-                sees_occupied01(r, c, -1,  0) +
-                sees_occupied01(r, c, -1,  1) +
-                sees_occupied01(r, c,  0, -1) +
-                sees_occupied01(r, c,  0,  1) +
-                sees_occupied01(r, c,  1, -1) +
-                sees_occupied01(r, c,  1,  0) +
-                sees_occupied01(r, c,  1,  1))
+        return (sees_occupied01(r, c, -1, -1)
+                + sees_occupied01(r, c, -1,  0)
+                + sees_occupied01(r, c, -1,  1)
+                + sees_occupied01(r, c,  0, -1)
+                + sees_occupied01(r, c,  0,  1)
+                + sees_occupied01(r, c,  1, -1)
+                + sees_occupied01(r, c,  1,  0)
+                + sees_occupied01(r, c,  1,  1) )
 
     new_grid = copy.deepcopy(grid)
     for r in range(len(grid)):
