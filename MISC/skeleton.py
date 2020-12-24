@@ -10,6 +10,7 @@ import copy         # .deepcopy
 import collections  # .defaultdict
 import os           # .system
 import time         # .sleep
+import functools    # .reduce
 
 
 # ======================================================================
