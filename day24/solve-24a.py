@@ -20,7 +20,7 @@ import sys          # .stdin
 # 2-tuples of int.
 
 
-# str_dir: dict mapping strings to direction tuples.
+# str_dir - dict mapping strings to direction tuples.
 str_dir = { "nw":( 0, 1),
             "ne":( 1, 1),
             "w" :(-1, 0),
@@ -29,7 +29,7 @@ str_dir = { "nw":( 0, 1),
             "se":( 0,-1) }
 
 
-# add_tuples: given two 2-tuples of int, return their itemwise sum.
+# add_tuples - given two 2-tuples of int, return their itemwise sum.
 def add_tuples(tup1, tup2):
     assert isinstance(tup1, tuple)
     assert len(tup1) == 2

@@ -20,7 +20,7 @@ import sys          # .stdin
 # 2-tuples of int.
 
 
-# str_dir: dict mapping strings to direction tuples.
+# str_dir - dict mapping strings to direction tuples.
 str_dir = { "nw":( 0, 1),
             "ne":( 1, 1),
             "w" :(-1, 0),
@@ -29,7 +29,7 @@ str_dir = { "nw":( 0, 1),
             "se":( 0,-1) }
 
 
-# dir_set: set of neighbor direction tuples.
+# dir_set - set of neighbor direction tuples.
 dir_set = { ( 0, 1),
             ( 1, 1),
             (-1, 0),
@@ -38,7 +38,7 @@ dir_set = { ( 0, 1),
             ( 0,-1) }
 
 
-# add_tuples: given two 2-tuples of int, return their itemwise sum.
+# add_tuples - given two 2-tuples of int, return their itemwise sum.
 def add_tuples(tup1, tup2):
     assert isinstance(tup1, tuple)
     assert len(tup1) == 2
@@ -51,7 +51,7 @@ def add_tuples(tup1, tup2):
     return (tup1[0]+tup2[0], tup1[1]+tup2[1])
 
 
-# iterate: given set of locations of black-side-up tiles, do one daily
+# iterate - given set of locations of black-side-up tiles, do one daily
 # iteration. New set of black-up tiles is returned; black_tiles is not
 # modified.
 def iterate(black_tiles):
