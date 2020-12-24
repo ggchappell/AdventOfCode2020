@@ -73,12 +73,7 @@ for line in sys.stdin:
 
 # *** Do Computation ***
 
-max_id = None
-for bps in bpss:
-    info = bps_to_info(bps)
-    seat_id = info[2]
-    if max_id is None or seat_id > max_id:
-        max_id = seat_id
+max_id = max(( bps_to_info(bps)[2] for bps in bpss ))
 
 # *** Print Answer ***
 
