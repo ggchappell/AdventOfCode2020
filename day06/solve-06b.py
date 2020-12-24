@@ -10,11 +10,7 @@ import sys          # .stdin
 # ======================================================================
 
 
-def to_set(line):
-    s = set()
-    for c in line:
-        s.add(c)
-    return s
+# (NONE)
 
 
 # ======================================================================
@@ -28,9 +24,8 @@ group_lines = []
 the_sets = []
 for line in sys.stdin:
     line = line.rstrip()
-    if line != "":
-        s = to_set(line)
-        the_sets.append(s)
+    if line:
+        the_sets.append(set(line))  # Append set of chars in line
         continue
     group_lines.append(the_sets)
     the_sets = []
