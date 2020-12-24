@@ -51,9 +51,8 @@ for ll in dataset:
 maybe_ingredients = set()
 for allergen in all_allergens:
     intersection = functools.reduce(
-        lambda a,b: a & b,
-        ( ll[0] for ll in dataset if allergen in ll[1] )
-        )
+        lambda a,b: a & b,  # set intersection
+        ( ll[0] for ll in dataset if allergen in ll[1] ))
     # Above raises exception if there is no ll with allergen in ll[1].
     # So we are effectively asserting that.
     maybe_ingredients |= intersection
