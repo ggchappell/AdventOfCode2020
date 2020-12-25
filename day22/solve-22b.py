@@ -54,7 +54,7 @@ def play_game(deck1, deck2):
         return 1
     else:
         return 2
-    
+
 
 # score - Given deck, in top-to-bottom order, return score.
 def score(deck):
