@@ -38,7 +38,7 @@ def bps_to_info(bps):
         elif c == "B":
             r1 += d//2
         else:
-            assert False
+            assert False, f"Bad row split: {c}"
     assert r2 == r1+1
 
     # Find column
@@ -52,7 +52,7 @@ def bps_to_info(bps):
         elif c == "R":
             c1 += d//2
         else:
-            assert False
+            assert False, f"Bad column split: {c}"
     assert c2 == c1+1
 
     return r1, c1, r1*8 + c1

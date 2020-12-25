@@ -53,7 +53,7 @@ def is_field_valid(key, val):
         elif unit == "in":
             return 59 <= num_value <= 76
         else:
-            assert False
+            assert False, f"Bad units: {unit}"
     elif key == "hcl":
         if len(val) != 7:
             return False

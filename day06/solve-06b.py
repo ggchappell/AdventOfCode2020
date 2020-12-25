@@ -37,7 +37,7 @@ if the_sets != []:
 
 total = 0
 for set_list in group_lines:
-    assert len(set_list) > 0
+    assert set_list
     intersection = functools.reduce(
         lambda a,b: a & b,  # set intersection
         set_list)
