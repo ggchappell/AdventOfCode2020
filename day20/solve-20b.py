@@ -154,7 +154,7 @@ def mark_sea_monsters(image):
                     continue
                 image[y+smy] = (
                     image[y+smy][:x+smx] + "O" + image[y+smy][x+smx+1:])
-            
+
 
 # ======================================================================
 # MAIN PROGRAM(
