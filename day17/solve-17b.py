@@ -16,7 +16,10 @@ def count_active_nbrs(active_set, k):
     for offset in itertools.product((-1,0,1), repeat=4):
         if offset == (0,0,0,0):
             continue
-        nbr = (k[0]+offset[0],k[1]+offset[1],k[2]+offset[2],k[3]+offset[3])
+        nbr = (k[0]+offset[0],
+               k[1]+offset[1],
+               k[2]+offset[2],
+               k[3]+offset[3])
         if nbr in active_set:
             count += 1
     return count
@@ -29,7 +32,10 @@ def iterate(active_set):
         for offset in itertools.product((-1,0,1), repeat=4):
             if offset == (0,0,0,0):
                 continue
-            nbr = (k[0]+offset[0],k[1]+offset[1],k[2]+offset[2],k[3]+offset[3])
+            nbr = (k[0]+offset[0],
+                   k[1]+offset[1],
+                   k[2]+offset[2],
+                   k[3]+offset[3])
             if nbr in active_set:
                 continue
             inactive_to_check.add(nbr)
